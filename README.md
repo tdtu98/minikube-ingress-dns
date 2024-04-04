@@ -1,0 +1,1 @@
+# minikube-ingress-dns
