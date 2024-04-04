@@ -8,7 +8,7 @@ This is my note for using ingress-dns inside minikube on ARM64 environment (Mac 
 + Minikube  v1.32.0
 + Kubectl v1.29.3
 ## Usage
-In this project, I used the hello-world-app.yaml which is simillar to the one in the [official tutorial of minikube](https://minikube.sigs.k8s.io/docs/handbook/addons/ingress-dns/#mac-os). In minikube for mac, we cannot directly connect to the cluster inside minikube without using minikube tunnel. To fix that, please install [docker-mac-net-connect](https://github.com/chipmk/docker-mac-net-connect):
+In this project, I used the hello-world-app.yaml which is simillar to the one in the [official tutorial of minikube](https://minikube.sigs.k8s.io/docs/handbook/addons/ingress-dns/#mac-os). In minikube for mac, we cannot directly connect to pods of cluster inside minikube without using minikube tunnel. To fix that, please install [docker-mac-net-connect](https://github.com/chipmk/docker-mac-net-connect):
 ```
 brew install chipmk/tap/docker-mac-net-connect
 sudo brew services start chipmk/tap/docker-mac-net-connect
@@ -48,4 +48,11 @@ curl http://hello-john.test
 curl http://hello-jane.test
 ```
 Please notice that our top level domain is test as our webs are .test, you can change to other top level domains like .com, .net. However, this also affects your connection to other websites with the same top level domain.
+## Reference
+https://github.com/kubernetes/minikube/issues/12424#issuecomment-1929241678
 
+https://github.com/kubernetes/minikube/issues/16530#issuecomment-2001903804
+
+https://gitlab.com/cryptexlabs/public/development/minikube-ingress-dns/-/tree/master
+
+https://minikube.sigs.k8s.io/docs/handbook/addons/ingress-dns/#mac-os
