@@ -13,7 +13,7 @@ In this project, I used the hello-world-app.yaml which is simillar to the one in
 brew install chipmk/tap/docker-mac-net-connect
 sudo brew services start chipmk/tap/docker-mac-net-connect
 ```
-Since the hello world app is the docker image for amd64, we cannot run it inside the minikube. To fix that please run these commands:
+Since the hello world app and kube-ingress-dns-minikube only supports amd64 arch, we cannot run them inside the minikube. To fix that please run these commands:
 ```
 minikube ssh "sudo apt-get update && sudo apt-get -y install qemu-user-static"
 minikube stop
